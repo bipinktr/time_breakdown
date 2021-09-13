@@ -26,9 +26,8 @@ cd time_breakdown/
 
 ``` bash
 mv .env.example .env
-touch database/database.sqlite
 composer install
-php artisan migrate --seed
+php artisan migrate:fresh --seed
 ```
 
 ## Steps for testing
