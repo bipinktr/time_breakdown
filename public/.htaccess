@@ -9,6 +9,10 @@
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 
+    # Handle api_token Header
+    RewriteCond %{HTTP:api_token} .
+    RewriteRule .* - [E=HTTP_API_TOKEN:%{HTTP:api_token}]
+
     # Redirect Trailing Slashes If Not A Folder...
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_URI} (.+)/$
