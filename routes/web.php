@@ -13,9 +13,9 @@
 |
 */
 
-/*$router->get('/', function () use ($router) {
+$router->get('/', function () use ($router) {
     return $router->app->version();
-});*/
+});
 $router->group(['prefix' => 'api', 'middleware' => 'auth'], function () use ($router) {
     $router->post('/breakdown', ['uses' => 'BreakdownController@createBreakdown']);
     $router->get('/breakdown', ['uses' => 'BreakdownController@filterBreakdown']);
